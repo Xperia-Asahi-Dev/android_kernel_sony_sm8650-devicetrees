@@ -11,6 +11,9 @@ add-overlays = $(foreach o,$1,$(foreach b,$2,$(eval $(basename $b)-$(basename $o
 # see DTB_TYPES from scripts/Makefile.dtbinst and install_dtbs from build.config.msm.common
 #
 
+# HACK to not build qcom dts until we get kconfig option in kernel
+ifeq ($(CONFIG_MACH_SONY_DEVICE), y)
+
 ifneq ($(CONFIG_ARCH_QTI_VM), y)
 
 PINEAPPLE_BASE_DTB += pineapple-v2.dtb pineapple-qcm.dtb
@@ -684,6 +687,8 @@ sdmsteppeauto-dtb-$(CONFIG_ARCH_SA6155) += \
 sdmsteppeauto-overlays-dtb-$(CONFIG_ARCH_SA6155) += $(SA6155_BOARDS) $(SA6155P_BOARDS) $(SA6155_BASE_DTB) $(SA6155P_BASE_DTB)
 
 dtb-y += $(sdmsteppeauto-dtb-y)
+
+endif
 
 always-y        := $(dtb-y)
 subdir-y        := $(dts-dirs)

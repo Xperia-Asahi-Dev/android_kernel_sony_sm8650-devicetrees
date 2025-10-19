@@ -16,7 +16,9 @@ dtbo-y += kalama-audio.dtbo \
 endif
 
 ifeq ($(CONFIG_ARCH_PINEAPPLE), y)
-dtbo-y += pineapple-audio.dtbo \
+dtbo-y += pineapple-audio.dtbo
+ifeq ($(CONFIG_MACH_SONY_DEVICE), y)
+dtbo-y += \
                  pineapple-audio-cdp.dtbo \
                  pineapple-audio-wsa883x-cdp.dtbo \
                  pineapple-audio-cdp-nfc.dtbo \
@@ -43,6 +45,9 @@ dtbo-y += pineapple-audio.dtbo \
                  cliffs7-audio-mtp-wcd9395.dtbo \
                  cliffs-audio-atp.dtbo \
                  cliffs7-audio-atp.dtbo
+endif
+dtb-y += pineapple-audio.dtbo
+dtbo-y += sony/somc-asahi-audio-pdx245.dtbo
 endif
 
 ifeq ($(CONFIG_ARCH_VOLCANO), y)
