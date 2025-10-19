@@ -1,8 +1,8 @@
 /dts-v1/;
 /plugin/;
 
-#include "pineapple-audio.dtsi"
-#include "pineapple-audio-qrd.dtsi"
+#include "../pineapple-audio.dtsi"
+#include "../pineapple-audio-qrd.dtsi"
 #include "somc-asahi-audio-common.dtsi"
 #include "somc-asahi-audio-pdx245.dtsi"
 

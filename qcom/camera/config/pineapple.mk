@@ -9,7 +9,6 @@ dtbo-$(CONFIG_ARCH_PINEAPPLE)	+= pineapple-camera-v2.dtbo \
 									pineapple-camera-sensor-aim500.dtbo
 endif
 dtbo-y += sony/pineapple-camera-sensor-pdx245.dtbo
-dtbo
 dtbo-$(CONFIG_ARCH_CLIFFS)	+= cliffs-camera.dtbo
 dtbo-$(CONFIG_ARCH_CLIFFS)	+= cliffs-camera-sensor-cdp.dtbo \
 								cliffs-camera-sensor-mtp.dtbo \

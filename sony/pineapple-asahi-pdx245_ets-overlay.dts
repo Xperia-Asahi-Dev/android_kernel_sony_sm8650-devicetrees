@@ -1,7 +1,7 @@
 /dts-v1/;
 /plugin/;
 
-#include "pineapple-qrd.dtsi"
+#include "../qcom/pineapple-qrd.dtsi"
 #include "pineapple-asahi-pdx245_ets.dtsi"
 
 / {

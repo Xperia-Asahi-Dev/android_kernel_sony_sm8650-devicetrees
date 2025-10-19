@@ -45,10 +45,6 @@ dtbo-y += \
                  cliffs7-audio-mtp-wcd9395.dtbo \
                  cliffs-audio-atp.dtbo \
                  cliffs7-audio-atp.dtbo
-endif
-dtb-y += pineapple-audio.dtbo
-dtbo-y += sony/somc-asahi-audio-pdx245.dtbo
-endif
 
 ifeq ($(CONFIG_ARCH_VOLCANO), y)
 dtbo-y += volcano-audio.dtbo \
@@ -72,6 +68,10 @@ dtbo-y += volcano-audio.dtbo \
 		volcano6i-audio-mtp-wcd9395-moselle.dtbo \
 		volcano6i-audio-mtp-moselle-wingmate.dtbo \
 		volcano6i-audio-qrd-moselle.dtbo
+endif
+endif
+dtb-y += pineapple-audio.dtbo
+dtbo-y += sony/somc-asahi-audio-pdx245.dtbo sony/somc-asahi-audio-pdx245_ets.dtbo
 endif
 
 ifeq ($(CONFIG_ARCH_PITTI), y)
