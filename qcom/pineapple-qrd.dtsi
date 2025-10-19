@@ -89,9 +89,6 @@
 	qcom,vccq-parent-supply = <&pm_v6c_s1>;
 	qcom,vccq-parent-max-microamp = <210000>;
 
-	qcom,vccq-shutdown-supply = <&pm_v6c_l1>;
-	qcom,vccq-shutdown-max-microamp = <1200000>;
-
 	reset-gpios = <&tlmm 210 GPIO_ACTIVE_LOW>;
 	resets = <&gcc GCC_UFS_PHY_BCR>;
 	reset-names = "rst";
@@ -125,15 +122,15 @@
 		#size-cells = <0>;
 		qcom,bus-type = "i2c";
 
-		qcom,smb1396@34 {
+		qcom,smb1502@68 {
 			compatible = "qcom,i2c-pmic";
-			reg = <0x34>;
+			reg = <0x68>;
 			qcom,can-sleep;
 		};
 
-		qcom,smb1396@35 {
+		qcom,smb1502@69 {
 			compatible = "qcom,i2c-pmic";
-			reg = <0x35>;
+			reg = <0x69>;
 			qcom,can-sleep;
 		};
 
@@ -143,53 +140,39 @@
 			qcom,can-sleep;
 		};
 	};
-
-	/* SPMI bridge bus 0 with SMB1510 device */
-	spmi@200 {
-		reg = <0x200>;
-		#address-cells = <2>;
-		#size-cells = <0>;
-		qcom,bus-type = "spmi";
-
-		qcom,smb1510@d {
-			compatible = "qcom,spmi-pmic";
-			reg = <0xd SPMI_USID>;
-			qcom,can-sleep;
-		};
-	};
 };
 
 &pmic_glink_adc {
 	status = "ok";
 
-	smb1396_1_iin {
-		reg = <0x1073401>;
-		label = "smb1396_1_iin";
+	smb1502_1_iin {
+		reg = <0x1076801>;
+		label = "smb1502_1_iin";
 	};
 
-	smb1396_1_ichg {
-		reg = <0x1073402>;
-		label = "smb1396_1_ichg";
+	smb1502_1_ichg {
+		reg = <0x1076802>;
+		label = "smb1502_1_ichg";
 	};
 
-	smb1396_1_die_temp {
-		reg = <0x1073403>;
-		label = "smb1396_1_die_temp";
+	smb1502_1_die_temp {
+		reg = <0x1076803>;
+		label = "smb1502_1_die_temp";
 	};
 
-	smb1396_2_iin {
-		reg = <0x1073501>;
-		label = "smb1396_2_iin";
+	smb1502_2_iin {
+		reg = <0x1076901>;
+		label = "smb1502_2_iin";
 	};
 
-	smb1396_2_ichg {
-		reg = <0x1073502>;
-		label = "smb1396_2_ichg";
+	smb1502_2_ichg {
+		reg = <0x1076902>;
+		label = "smb1502_2_ichg";
 	};
 
-	smb1396_2_die_temp {
-		reg = <0x1073503>;
-		label = "smb1396_2_die_temp";
+	smb1502_2_die_temp {
+		reg = <0x1076903>;
+		label = "smb1502_2_die_temp";
 	};
 };
 
