@@ -3,7 +3,7 @@
 
 #include "../display/pineapple-sde-display-qrd.dtsi"
 #include "somc-asahi-display.dtsi"
-#include "dsi-panel-s6e3fae-amb646fj01-fhd_plus.dtsi"
+#include "somc-asahi-display-cdb.dtsi"
 
 / {
 	model = "Sony Corporation. PDX-245(Pineapple QRD)";
